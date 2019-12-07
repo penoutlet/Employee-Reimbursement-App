@@ -39,7 +39,6 @@ public static String UpdateTicket(HttpServletRequest request) {
 	String reimbId = request.getParameter("reimbIdInput");
 	String action = request.getParameter("approveOrDenyInput");
 	User u = (User)request.getSession().getAttribute("User");
-//	System.out.println("Manager " + u.getFirstName() + " updated ticket " + reimbId +" to status of " + action);
 	// need to parseint bcause all inputs from form come in as strings
 	Integer reimbIdInt = Integer.parseInt(reimbId);
 	ReimbursementDAOImpl rdi = new ReimbursementDAOImpl();
@@ -56,21 +55,8 @@ public static String UpdateTicket(HttpServletRequest request) {
 	}
 	ticketToUpdate.setResolver(u.getUserId());
 	ticketToUpdate.setResolved(resolvedAt);
-	System.out.println("Ticket to update from inside contoller: " + ticketToUpdate.toString());
-//	Reimbursement updatedTick = rdi.selectReimById(reimbIdInt); 
 	rdi.updateReimbursement(ticketToUpdate);
 	
 	return "/html/finance-manager.html";
 }
-
-//public static String ChangeView(HttpServletRequest request, HttpServletResponse response) {
-//	
-//}
-//public static String ApproveTicket()
-//public static ... DenyTicket
-
-//public void sendEmail(String emailAddress) {
-//	String em = "samuelriley1393@gmail.com";
-//	
-//}
 }

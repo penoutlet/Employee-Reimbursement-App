@@ -11,7 +11,7 @@ import com.models.User;
 
 public class RegisterController {
 //	final static Logger log = Logger.getLogger("RegisterController.class");
-	static Logger logger = Logger.getLogger(LoginController.class);
+//	static Logger logger = Logger.getLogger(LoginController.class);
 	
 	public static String Register(HttpServletRequest request) {
 		
@@ -33,7 +33,7 @@ public class RegisterController {
 		UserDAOImpl udi = new UserDAOImpl();
 		udi.createUser(user);
 //		log.info("New employee " + user.getUserName() + " has registered.");
-		logger.info("Employee " + user.getUserName() + " registered successfully");
+//		logger.info("Employee " + user.getUserName() + " registered successfully");
 		
 		return "/html/Login.html";
 		

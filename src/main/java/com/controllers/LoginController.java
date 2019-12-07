@@ -10,7 +10,7 @@ import com.models.User;
 public class LoginController {
 //	final static Logger log = Logger.getLogger("LoginController.class");
 	
-	static Logger logger = Logger.getLogger(LoginController.class);
+//	static Logger logger = Logger.getLogger(LoginController.class);
 
 
 	public static String Login(HttpServletRequest request) {
@@ -28,7 +28,7 @@ public class LoginController {
 		}
 		if(user.getUserName().equals(username) && user.getPassWord().equals(password)) {
 //			log.info("User " + user.getUserName() + " has logged in.");
-			logger.info(user.getUserName() + " has logged in successfully");
+//			logger.info(user.getUserName() + " has logged in successfully");
 			request.getSession().setAttribute("User", user);
 			int roleId = user.getRoleId();
 			switch(roleId) {
